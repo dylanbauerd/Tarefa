@@ -26,6 +26,9 @@
 </table>
 
 </div>
+<div ng-app="myApp" ng-controller="myCtrl">
+  Name: <input ng-model="name">
+</div>
 
 <script>
 var app = angular.module('myApp', []);
@@ -37,6 +40,11 @@ var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
   $http.get("customers.php")
   .then(function (response) {$scope.names = response.data.records;});
+});
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+  $scope.name = "John Doe";
 });
 </script>
 
