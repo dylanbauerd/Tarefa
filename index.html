@@ -46,6 +46,11 @@ var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
   $scope.name = "John Doe";
 });
+
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $location) {
+    $scope.myUrl = $location.absUrl();
+}); 
 </script>
 
 
